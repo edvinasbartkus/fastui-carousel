@@ -78,7 +78,7 @@ let Carousel  = React.createClass ({
 
     scrollToNext() {
         this.state.scrollerOffset = this.state.scrollerOffset + screen_w
-        this.refs.scrollView.scrollTo(0, this.state.scrollerOffset)
+        this.refs.scrollView.scrollTo({ x: 0, y: this.state.scrollerOffset })
 
         this.setState({
             activePage: this.state.activePage + 1
@@ -87,7 +87,7 @@ let Carousel  = React.createClass ({
 
     scrollToPrev() {
         this.state.scrollerOffset = this.state.scrollerOffset - screen_w
-        this.refs.scrollView.scrollTo(0, this.state.scrollerOffset)
+        this.refs.scrollView.scrollTo({ x: 0, y: this.state.scrollerOffset })
 
         this.setState({
             activePage: this.state.activePage - 1
@@ -95,7 +95,7 @@ let Carousel  = React.createClass ({
     },
 
     reposition() {
-        this.refs.scrollView.scrollTo(0, this.state.scrollerOffset)
+        this.refs.scrollView.scrollTo({ x: 0, y: this.state.scrollerOffset })
     },
 
     renderPagination() {
